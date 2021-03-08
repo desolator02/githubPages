@@ -1,0 +1,28 @@
+//CapsLock Script
+Set WshSell = WScript.CreateObject("WScript.Shell")
+msg = "About to start."
+MsgBox msg
+WScript.Sleep 2000
+x=1
+
+Do While x<30
+WshSell.SendKeys "{CAPSLOCK}"
+WScript.Sleep 1000
+WshSell.SendKeys "{CAPSLOCK}"
+x=x+1
+WScript.Sleep 60*1000
+Loop
+MsgBox "End of script"
+
+//Reminder script
+Set WshSell = WScript.CreateObject("WScript.Shell")
+WScript.Sleep 200
+txt = InputBox ("Reminder message")
+tim = InputBox ("Reminder time in min")
+WScript.Sleep 200
+msg = "Will reminf you for '"+ txt + "' in " + tim + " min"
+MsgBox msg
+
+WScript.Sleep tim * 60 * 1000
+
+MsgBox txt
